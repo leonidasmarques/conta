@@ -17,16 +17,19 @@ public class Program {
 		int numero = sc.nextInt();
 		cont.setNumeroConta(numero);
 		
-		System.out.println("Haverá deposto inicial? ");
-		String resposta = sc.next().charAt(0);
-			if(equals.resposta == 's') {
-				
-			};
-		System.out.println("Informe o nome do titular da conta: ");
-		double depositoInicial = sc.nextDouble();
-		cont.setDepositoInicial(depositoInicial);
+		double depositoInicial;
 		
+		System.out.println("Havera depositio inicial? (1) para sim / (2) para não");
+		int resposta = sc.nextInt();
+		if( resposta == 1) {
+			System.out.println("Informe o valod de depoisito inicial: ");
+			depositoInicial = sc.nextDouble();
+			cont.setDepositoInicial(depositoInicial);
+		}else {
+			cont.setDepositoInicial(0);
+		}
 		
+		System.out.println(cont.saldo());
 		
 		sc.close();
 
