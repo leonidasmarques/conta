@@ -5,7 +5,7 @@ public class Conta {
 	private String nome;
 	private int numeroConta;
 	private double depositoInicial = 0;
-	private double saldo = 0;
+	private double saldo;
 	
 	public Conta() {}
 	
@@ -62,6 +62,13 @@ public class Conta {
 		return saldo += depositoInicial;
 	}
 	
+	public double deposito(double valor) {
+		 return saldo += valor;
+	}
+	
+	public double saque(double valor) {
+		 return saldo += valor;
+	}
 	
 	
 	
