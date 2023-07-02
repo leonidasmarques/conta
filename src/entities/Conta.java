@@ -67,8 +67,18 @@ public class Conta {
 	}
 	
 	public double saque(double valor) {
-		 return saldo -= valor;
+		double aux;
+		if(saldo >= valor) {
+			aux = saldo - valor;
+			saldo = aux;
+		} else {
+			System.out.println("Saque indisponivél! Valor de saque maior que o saldo da conta!");
+		}
+		 
+		return saldo;
 	}
+	
+	
 	
 	
 	
