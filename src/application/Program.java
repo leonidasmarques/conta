@@ -11,7 +11,6 @@ public class Program {
 		Conta cont = new Conta();
 
 		boolean escolha = true;
-		double auxSaldo;
 		do {
 			System.out.println("Deseja realizar alguma operação? ");
 			String aux = sc.next();
