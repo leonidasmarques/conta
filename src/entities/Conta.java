@@ -5,6 +5,8 @@ public class Conta {
 	private String nome;
 	private int numeroConta;
 	private double depositoInicial = 0;
+	private boolean limite = true;
+	private double saldoEspecial = 100.00;
 	private double saldo;
 	
 	public Conta() {}
@@ -16,10 +18,11 @@ public class Conta {
 	}
 
 
-	public Conta(String nome, int numeroConta, double depositoInicial, double saldo) {
+	public Conta(String nome, int numeroConta, double depositoInicial, double saldoEspecial, double saldo) {
 		this.nome = nome;
 		this.numeroConta = numeroConta;
 		this.depositoInicial = depositoInicial;
+		this.saldoEspecial =  saldoEspecial;
 		this.saldo = saldo;
 	}
 
@@ -57,9 +60,12 @@ public class Conta {
 	public double getSaldo() {
 		return saldo;
 	}
-	
-	public double saldo() {
+	public double saldo() {		
 		return saldo += depositoInicial;
+	}
+	
+	public double saldoEspecial() {	
+		return saldo += depositoInicial + saldoEspecial;
 	}
 	
 	public double deposito(double valor) {
@@ -82,8 +88,8 @@ public class Conta {
 
 	@Override
 	public String toString() {
-		return "Extrato de Conta Titular : " 
-				+ nome + ", Número de Conta : " 
+		return "Extrato de Conta - Titular: " 
+				+ nome + ", Número de Conta: " 
 				+ numeroConta + ", Saldo: " 
 				+ saldo ;
 	}
