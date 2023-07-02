@@ -50,7 +50,7 @@ public class Conta {
 
 
 	public void setDepositoInicial(double depositoInicial) {
-		this.depositoInicial = depositoInicial;
+		this.saldo += depositoInicial;
 	}
 
 
@@ -79,6 +79,15 @@ public class Conta {
 		 
 		return saldo;
 	}
+
+	@Override
+	public String toString() {
+		return "Extrato de Conta Titular : " 
+				+ nome + ", Número de Conta : " 
+				+ numeroConta + ", Saldo: " 
+				+ saldo ;
+	}
+	
 	
 	
 	
