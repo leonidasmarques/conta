@@ -11,7 +11,6 @@ public class Program {
 		Conta cont = new Conta();
 
 		boolean escolha = true;
-		boolean limite = true;
 		double auxSaldo;
 		do {
 			System.out.println("Deseja realizar alguma operação? ");
@@ -46,9 +45,8 @@ public class Program {
 					System.out.println("Conta com limite especial? (1) para sim / (2) para não");
 					int resp = sc.nextInt();
 					if(resp == 1) {
-						auxSaldo = cont.saldoEspecial();
-					}else {
-						limite = false;
+						cont.setLimite(true);
+						cont.saldo();
 					}
 					break;
 

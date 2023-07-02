@@ -5,7 +5,7 @@ public class Conta {
 	private String nome;
 	private int numeroConta;
 	private double depositoInicial = 0;
-	private boolean limite = true;
+	private boolean limite = false;
 	private double saldoEspecial = 100.00;
 	private double saldo;
 	
@@ -55,17 +55,30 @@ public class Conta {
 	public void setDepositoInicial(double depositoInicial) {
 		this.saldo += depositoInicial;
 	}
+	
+	public boolean isLimite() {
+		return limite;
+	}
 
+	public void setLimite(boolean limite) {
+		this.limite = limite;
+	}
 
 	public double getSaldo() {
 		return saldo;
 	}
-	public double saldo() {		
-		return saldo += depositoInicial;
+	public double saldo() {	
+		double aux;
+		if(limite == true) {
+			aux = saldo + saldoEspecial() + depositoInicial;
+		}else {
+			aux = saldo + depositoInicial;
+		}
+		return aux;
 	}
 	
 	public double saldoEspecial() {	
-		return saldo += depositoInicial + saldoEspecial;
+		return saldoEspecial += saldo + depositoInicial ;
 	}
 	
 	public double deposito(double valor) {
@@ -91,7 +104,8 @@ public class Conta {
 		return "Extrato de Conta - Titular: " 
 				+ nome + ", Número de Conta: " 
 				+ numeroConta + ", Saldo: " 
-				+ saldo ;
+				+ saldo + ", Saldo com limite: "
+				+ saldoEspecial;
 	}
 	
 	
