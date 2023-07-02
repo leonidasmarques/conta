@@ -71,6 +71,8 @@ public class Conta {
 		if(saldo >= valor) {
 			aux = saldo - valor;
 			saldo = aux;
+			System.out.println("Saque realizado com sucesso!!!");
+			System.out.println("Seu saldo é : R$" + saldo);
 		} else {
 			System.out.println("Saque indisponivél! Valor de saque maior que o saldo da conta!");
 		}
